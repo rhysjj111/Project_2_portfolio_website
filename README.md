@@ -1,43 +1,41 @@
-# A website for a friends side business.
+# A website for an imaginary business with quiz.
 
 ## UX
 
 ### Overview
-Redcrown figures is a side business that professionally paint figures for it's customers. They are about to go into designing and producing figures themselves and want a professional website to showcase their new products. This site is targeted towards showcasing these new products primarily, and showcasing the commission paints already completed for both new and old customers.
+Vale Business Solutions is a website for a business that deliver tech solutions. It will contain a main page and a quiz powered by Javascript.
 
 ### Site owners goal
-To provide a professional looking, personal website on which to display his new line of products for a side business.
-The site owner nearly always displays his commission paints (established side of the business) on social media and has a good following already. 
-As he is going into a new venture; a web page displaying the products in a beautiful way may entice new customers to buy from him/give them more confidence to start a conversation.
-
-Secondarily, he would like to showcase his commisson paint work, which is already done quite elegantly on social media. It makes any new visitors aware of the full picture of his business.
+To provide relevant information so potential customers can get any information quickly. The site is aimed at small businesses that may not have any knowledge on what is available/what they are in need of so there should  be a flow of information that isn't going to confuse/overwhelm visitors. A quiz will be available for customers curious but not sure what their business needs which will hopefully lead to them getting in touch when they are better informed.
 
 ### External users goals
-* To discover new products.
-* To view latest commission paints.
-* An easy way to view the information and make contact with the site owner.
+* To find out what the business is selling. 
+* To find out if they are a good fit for the service/product.
+* To find out if it is feasible to buy the service/product (due to price/location limitations).
+* An easy way to make contact with the site owner.
 
 ### Developer goals
-- To provide a website that will display Redcrown figures new products and give visitors confidence to buy, or find out more about the company.
+- To provide a functioning website that will deliver a user friendly experience to the business customers.
 
 ### Proposed features
-- A shop page that clearly displays new products.
-- Product pages that give more details and offer a call to action.
-- Commission paints gallery page.
-- An about section that gives viewers a more in depth look into the owner of the business.
+- A homepage that explains what the business does and provides key information, such as price/contact information, and encourages the user to take the quiz.
+- A quiz that will tell the customer which services their business could use.
+- A contact form.
 
-I will try to include all of these features, as I do not think they are too technical/will take too much time to complete. I also think that they can quite easily be set out so they can be navigated easily without overloading the user with information.
+The features listed are achievable in terms of timescales and technology available.
 
 ### User stories
-- As a new customer of Redcrown figures, I want to see what exactly this company has to offer and if I can trust them.
-- As a customer of Redcrown figures, I want to be able to get quick access to your new products and have all the relative information about them to hand.
+- As a potential customer of Vale Business Solutions with little tech background, I would like to know what they are selling and have a general understanding of how that can be applied to my business.
+- I would also like to know things like costs/timescales/availability.
+- I want to know what the next steps are to get the ball rolling.
 
 ### Design choices
-- I plan on using the shop on the main index.html page as this is the main point of the website, to drive potential customers here.
-- A gallery will be on another page accessible from the navigation bar.
-- An about  page will also have it's own page accessible from the navigation bar. 
-- Shop will be the first option in the navbar, followed by the about page, finally, the commission page will be last as this is the expected order of importance for our prospective visitor.
-- There will always be a call to action available to complete a contact form as this is how the owner of Redcrown deals with all of his customers. It is a bit more personal than an online transaction.
+- Minimum but essential information will be displayed to inform but not overwhelm anybody using the site with little tech background. Also, for someone who does know what's being offered, they should be able to find what they are looking for fast.
+- A neutral colour scheme will be used for the same reasons as above.
+- The site will comprise of one main page, comprised of three sections; 'what we do/pricing', 'case studies carrousel', 'personal pitch/contact information'.
+- Each case study will be on it's own page to go into detail.
+- The quiz will be on it's own page.
+- A fixed navigation bar will be fixed at the top of each page and include a link for each section of the main page, plus a highlighted link for the quiz and a contact button.
 
 ### Wireframes
 
