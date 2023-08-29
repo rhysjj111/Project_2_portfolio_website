@@ -5,36 +5,49 @@ body {
 
 
 
+/* colours */
+
+.bgc-1{
+    background-color: #292829;
+}
+
+.bgc-1a{
+    background-color: #fdfbfb;
+}
+
+.bgc-2{
+    background-color: seagreen;
+}
+.fc-1{
+    color: #fdfbfb;
+}
+
+.fc-1a{
+    color: #292829;
+}
+
+
+
+
 /* navigation bar */
-.discount-banner{
-    border: 0;
-    background-color: rgba(232, 12, 71, 0.908);
-    border-radius: 0;
-    padding: 7px;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    font-weight: 400;
-}
-.discount-banner a{
-    color: white!important;
-    text-decoration: none!important;
-}
+
 .navbar {
-    background-color: #585657;
-    border-bottom: solid;
-    border-bottom-color: rgba(182, 182, 182, 0.496);
-    border-bottom-width: 1px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 } 
 .navbar-brand{
-    margin: 0;
+    letter-spacing: 0.75px;
 }
 .nav-item a{
     letter-spacing: 0.75px;
-    color: white;
+    color: #fdfbfb;
     font-weight: 300;
 }
 .nav-item a:hover{
-    color: seagreen;
+    color: #a6daf1;
+    opacity: 0.8;
+
 }
 .navbar-nav .nav-item .active{
     background-color: none;
@@ -115,10 +128,26 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 
 
 /* containers */
+.wwd-container{
+    
+}
 .content-container{
     padding: 8vh 0px;
     background-color: #eeece476;    
     font-family: 'Lato', sans-serif;
+}
+.wwd-container{
+    height: 70vh;
+    background-size: cover;
+    background-color: #fdfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    margin-top:  78px;
+}
+.callout{
+    position: relative;
 }
 
 
@@ -150,7 +179,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 .btn{
     font-weight: 300;
     border-radius: 3px;
-    padding: 10px;
+    padding: 10px 15px;
     font-family: 'roboto slab', sans-serif;
 
     transition: 0.3s;
@@ -171,13 +200,9 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 
 .contact-button{
-    color: #585657!important;
-    background-color: #fdfbfb;
     font-weight: 400;
 }
 .contact-button:hover{
-    color: #585657!important;
-    background-color: #fdfbfb;
     opacity: 0.8;
 }
 .get-in-touch{
@@ -219,22 +244,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 
 
 /* callout */
-.callout-container{
-    height: 90vh;
-    background: url(../images/cover4-edited.jpg) no-repeat right center; 
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
-    background-size: cover;
-    background-color: #0D0D0D;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    position: relative;
-}
-.callout{
-    position: relative;
-}
+
 .opaque-overlay{
     position: absolute;
     top: 0;
