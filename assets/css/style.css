@@ -16,7 +16,7 @@ body {
 }
 
 .bgc-2{
-    background-color: seagreen;
+    background-color: rgb(46, 79, 139);
 }
 .fc-1{
     color: #fdfbfb;
@@ -35,6 +35,7 @@ body {
     position: fixed;
     z-index: 1;
     top: 0;
+    height: 78px;
 } 
 .navbar-brand{
     letter-spacing: 0.75px;
@@ -67,7 +68,6 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     padding:0;
 }
 .footer{
-    background-color: seagreen;
     height: 35vh;
     min-height: 250px;
     max-height: 300px;
@@ -136,7 +136,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     background-color: #eeece476;    
     font-family: 'Lato', sans-serif;
 }
-.wwd-container{
+.cover-container{
     height: 70vh;
     background-size: cover;
     background-color: #fdfbfb;
@@ -245,14 +245,6 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 
 /* callout */
 
-.opaque-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-}
 .callout-header{
     color: white;
     background-color: black;
@@ -287,129 +279,4 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 .callout .btn{
     font-size: 21px;
-}
-
-
-
-/* shop */
-.shop-item{
-    padding: 0 40px 25px 40px;
-}
-.shop-container .shop-item a{
-    color: black;
-    text-decoration: none;
-}
-.shop-container .shop-item-title{
-    color: black;
-    padding-top: 4px;
-}
-.shop-container .shop-item-price{
-    color: seagreen;
-    font-size: 19px;
-    font-weight: 600;
-}
-.shop-item img{
-    transition: 0.3s all;
-    margin-bottom:5px;
-}
-.shop-item:hover img{
-    opacity: 0.5;
-}
-
-
-
-/* --------------------------------------------------------- product.html */
-
-
-
-.product-display-container{
-    min-height: 350px;
-}
-.product-display-img-container .product-image{
-    max-width: 100%;
-    height:auto;
-    outline: solid 4px rgba(4, 67, 2, 0.505);
-}
-.product-title{
-    margin-bottom: 4px;
-}
-.product-subtitle{
-    margin-bottom: 30px;
-    color: #585657;
-}
-.product-price{
-    margin: 8px;
-    font-size: 26px;
-    font-weight: 500;
-}
-.product-btn{
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-
-
-/* --------------------------------------------------------- gallery.html */
-
-
-.gallery .page-header{
-    margin-bottom: 10px;
-}
-.carousel-container{
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.901);
-    justify-content: center;
-}
-.carousel img{
-    max-width: 100%;
-    max-height: 500px;
-    height: auto;
-    margin: auto;
-}
-.gallery-intro{
-    font-size: 19px;
-}
-
-
-
-/* --------------------------------------------------------- about.html */
-
-
-
-.about-image{
-    max-width: 100%;
-    max-height: 450px;
-    width: auto;
-    height:auto;
-    outline: solid 4px rgba(4, 67, 2, 0.505);
-    border-radius: 2px; 
-}
-.contact-info-container{
-    max-width: 500px;
-}
-.about-info{
-    margin-bottom: 20px;
-}
-.contact-info{
-    display: block;
-    margin-bottom: 20px;
-    clear: both;
-}
-.key,
-.value{
-    padding-right: 8px;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-}
-.key p,
-.value p {
-    margin: 0;
-}
-.key{
-    width: 25%;
-    margin-right: 10px
-}
-.value{
-    width: 60%;
 }

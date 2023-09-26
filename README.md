@@ -34,23 +34,15 @@ The features listed are achievable in terms of timescales and technology availab
 - A neutral colour scheme will be used for the same reasons as above.
 - The site will comprise of one main page, comprised of three sections; 'what we do/pricing', 'case studies carrousel', 'personal pitch/contact information'.
 - Each case study will be on it's own page to go into detail.
-- The quiz will be on it's own page.
+- The quiz will be in a pop up window.
 - A fixed navigation bar will be fixed at the top of each page and include a link for each section of the main page, plus a highlighted link for the quiz and a contact button.
 
 ### Wireframes
+Website wireframe:
+![Website wireframe](/assets/images/wireframes/Portfolio_project_wireframe.png)
 
-![Homepage - desktop wireframe](/assets/images/Wireframes/Homepage-dsk.png)
-![Homepage - tablet wireframe](/assets/images/Wireframes/Homepage-tab.png)
-![Homepage - mobile wireframe](/assets/images/Wireframes/Homepage-mb.png)
-![About page - desktop wireframe](/assets/images/Wireframes/About-dsk.png)
-![About page - tablet wireframe](/assets/images/Wireframes/About-tab.png)
-![About page - mobile wireframe](/assets/images/Wireframes/About-mb.png)
-![Gallery page - desktop wireframe](/assets/images/Wireframes/Gallery-dsk.png)
-![Gallery page - tablet wireframe](/assets/images/Wireframes/Gallery-tab.png.png)
-![Gallery page - mobile wireframe](/assets/images/Wireframes/Gallery-mb.png)
-![Product page - desktop wireframe](/assets/images/Wireframes/Product-dsk.png)
-![Product page - tablet wireframe](/assets/images/Wireframes/Product-tab.png)
-![Product page - mobile wireframe](/assets/images/Wireframes/Product-mb.png)
+Javascript pop up quiz wireframe:
+![Javacript pop up quiz wireframe](/assets/images/wireframes/Portfolio_project_javascript_wireframe.png)
 
 - End design similarity/difference
   - The wireframes were largely the same as the finished product, the main differences were some sizing of elements and a bootstrap carousel was used instead of a tile configuration for the photos in the commission gallery page.
