@@ -46,7 +46,7 @@ Javascript pop up quiz wireframe:
 
 - End design similarity/difference
   - The wireframes were largely the same as the finished product, the main differences were some sizing of elements and a bootstrap carousel was used instead of a tile configuration for the photos in the commission gallery page.
-  - I had made these changes because it just looked better visualy in practice.
+  - I had made these changes because it just looked better visualy in practice
 
 ### Testing 
 
