@@ -39,14 +39,18 @@ The features listed are achievable in terms of timescales and technology availab
 
 ### Wireframes
 Website wireframe:
-![Website wireframe](/assets/images/wireframes/Portfolio_project_wireframe.png)
+![Website wireframe](/assets/images/readme_images/Portfolio_project_wireframe.png)
 
 Javascript pop up quiz wireframe:
-![Javacript pop up quiz wireframe](/assets/images/wireframes/Portfolio_project_javascript_wireframe.png)
+![Javacript pop up quiz wireframe](/assets/images/readme_images/Portfolio_project_javascript_wireframe.png)
 
 - End design similarity/difference
   - The wireframes were largely the same as the finished product, the main differences were some sizing of elements and a bootstrap carousel was used instead of a tile configuration for the photos in the commission gallery page.
   - I had made these changes because it just looked better visualy in practice
+
+### Colour scheme
+![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
+The colour pallet was found on https://mycolor.space/
 
 ### Testing 
 
@@ -93,6 +97,8 @@ Cloning the Repository:
   - Repository page > Code > local > HTTPS > copy link > clone in code editor.
 
 ### Credits
+The colour pallet was found on https://mycolor.space/
+Globe image used as a background https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
 https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
 https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  

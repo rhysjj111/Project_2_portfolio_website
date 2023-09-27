@@ -8,22 +8,25 @@ body {
 /* colours */
 
 .bgc-1{
-    background-color: #292829;
+    background-color: #2F4858;
 }
 
 .bgc-1a{
-    background-color: #fdfbfb;
+    background-color: #f8f8f8;
 }
 
 .bgc-2{
-    background-color: rgb(46, 79, 139);
+    background-color: #D3FBD8;
+}
+.bgc-3{
+    background-color: #7CB2AC;
 }
 .fc-1{
-    color: #fdfbfb;
+    color: #f8f8f8;
 }
 
 .fc-1a{
-    color: #292829;
+    color: #2F4858;
 }
 
 
@@ -133,13 +136,14 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 .content-container{
     padding: 8vh 0px;
-    background-color: #eeece476;    
     font-family: 'Lato', sans-serif;
 }
 .cover-container{
+    background-image: url("/assets/images/globe6.png");
+    background-position: top -25% right -15% ;
+    background-size: 40%;
+    background-repeat: no-repeat;
     height: 70vh;
-    background-size: cover;
-    background-color: #fdfbfb;
     display: flex;
     align-items: center;
     justify-content: left;
