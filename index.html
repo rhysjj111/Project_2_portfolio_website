@@ -49,6 +49,7 @@
                     <div class="ms-lg-auto me-lg-5">
                         <ul class="navbar-nav">
                             <li class="d-none d-lg-block">
+                                <a class="btn btn-light quiz-button bgc-1a fc-7" id="quiz-button" >Take the Quiz! <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                                 <a class="btn btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal" >Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                             </li> 
                             
@@ -77,21 +78,26 @@
         <!--/cover-->
 
         <!-- cards -->
-        <div class="container-fluid cards-container content-container">
-            <section class="container-fluid">
+        <div class="container-fluid cards-container content-container f-2">
+            <section class="container-fluid px-0">
                 <div class="row justify-content-evenly">
                     <div class="col-3">
                         <div class="card">
                             <div class="card-body">
                                 <span class="data-icon"></span>
                                 <h2 class="card-heading">Collection & Analysis of Data</h2>
-                                <p>Description</p>
-                                <p>benefits:</p>
-                                <ul>
-                                    <li>benefit 1</li>
-                                    <li>benefit 2</li>
-                                    <li>benefit 3</li>
-                                </ul>
+                                <p>Most moving parts of a business can be recorded, and the data sorted through to provide insight.<br><em>ie. sales/costs/employee productivity/customer profiling</em>
+                                </p>    
+                                <p>
+                                    Which areas that should be investigated will be unique for each business type and it's current situation; there's no magic one size fits all. Data collection should be tailored with clear, well thought out, specific goals.
+                                </p>
+                                <p>BENEFITS:
+                                    <ul class="benefits-list">
+                                        <li>Removes guess work and estimations,</li>
+                                        <li>Get the information you need, fast,</li>
+                                        <li>Greater confidence making decisions.</li>
+                                    </ul>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -99,46 +105,55 @@
                         <div class="card">
                             <div class="card-body">
                                 <span class="data-icon"></span>
-                                <h2 class="card-heading">Collection & Analysis of Data</h2>
-                                <p>Description</p>
-                                <p>benefits:</p>
-                                <ul>
-                                    <li>benefit 1</li>
-                                    <li>benefit 2</li>
-                                    <li>benefit 3</li>
+                                <h2 class="card-heading">Automation</h2>
+                                <p>There are many areas of business that can be automated to cut out human effort and human error. This means employee efforts can be redirected to much more meaningful endeavours.
+                                </p>
+                                <p>
+                                    There are many helpful programs out there now that can integrate with the software you're currently using.
+                                </p>
+                                <p>                           
+                                    Automation should also be targeted.
+                                </p>
+                                <p>BENEFITS:</p>
+                                <ul class="benefits-list">
+                                    <li>Minimise human error,</li>
+                                    <li>Cut down on wasted hours performing repetitive tasks,</li>
+                                    <li>Provides uniformity which gives a professional impression to clients.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="circle-container container-fluid d-none d-xl-block fc-1a bgc-1a">
+                <h4 class="text-center">BENEFITS:</h4>
+                <div class="circle" id="circle2">
+                    <div>
+                        <ul class="benefits-list">
+                            <li>Removes guess work and estimations,</li>
+                            <li>Get the information you need, fast,</li>
+                            <li>Greater confidence making decisions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle" id="circle1">
+                    <div>
+                        <ul class="benefits-list">
+                            <li>Minimise human error,</li>
+                            <li>Cut down on wasted hours performing repetitive tasks,</li>
+                            <li>Provides uniformity which gives a professional impression to clients.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="middle">
+                    <ul class="benefits-list">
+                        <li>Future-proof your company,</li>
+                        <li>Efforts focused on the areas that create maximum impact.</li>
+                    </ul>
+                </div>
+            </div>
             </section>
         </div>
-        <div class="circle-container">
-        <div class="circle" id="circle2">
-            <div>
-                <ul>
-                    <li>Removes guess work and estimations</li>
-                    <li>Get the information you need, fast</li>
-                    <li>Greater confidence making decisions</li>
-                </ul>
-            </div>
-        </div>
-        <div class="circle" id="circle1">
-            <div>
-                <ul>
-                    <li>Minimise human error</li>
-                    <li>Cut down on wasted hours performing repetitive tasks.</li>
-                    <li>Provides uniformity which gives a professional impression to clients</li>
-                </ul>
-            </div>
-        </div>
-        <div id="middle">
-            <ul class="m-0">
-                <li>Future-proof company</li>
-                <li>Efforts of the company can be focused on the areas that create maximum impact</li>
-            </ul>
-        </div>
-        </div>
+        
         <!-- /cards -->
 
         <!-- pricing -->
@@ -266,6 +281,47 @@
             </div>
         </div>
         <!-- /Modal -->
+
+        <!-- hidden html -->
+        <div id="popup-window" class="d-none">
+            <div class="container popup-header modal-header">
+                <h1 class="modal-title display-4">Your details</h1>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="container popup-body modal-body">
+                <div class="container row justify-content-center">
+                    <div class="popup-question col-6">
+                        <form id="quiz-details-form">
+                            <div class="form-group mb-3">
+                                <label for="quiz-details-name" class="form-label" >Name*</label>
+                                <input id="quiz-details-name" type="text" name="name" class="form-control form-control-lg"
+                                placeholder="Please enter your name" required="required" data-error="Full name is required.">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="quiz-details-name" class="form-label" >Name*</label>
+                                <input id="quiz-details-name" type="text" name="name" class="form-control form-control-lg"
+                                placeholder="Please enter your name" required="required" data-error="Full name is required.">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="quiz-details-email" class="form-label">Email*</label>
+                                <input id="quiz-details-email" type="email" name="email" class="form-control form-control-lg" 
+                                placeholder="Please enter your email" required="required" data-error="Valid email is required.">
+                            </div> 
+                        </form>
+                    </div>                    
+                </div>
+                <div class="container popup-answer">
+                    <div class="popup-answer">
+                    </div>
+                </div>
+            </div>
+            <div class="container popup-footer modal-footer row justify-content-center">
+                <div class="col-3 text-center">
+                    <button id="next-button">Next</button>
+                </div>
+            </div>
+        </div>
+        <!-- /hidden html -->
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

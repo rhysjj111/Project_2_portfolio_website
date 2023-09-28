@@ -32,7 +32,7 @@ The features listed are achievable in terms of timescales and technology availab
 ### Design choices
 - Minimum but essential information will be displayed to inform but not overwhelm anybody using the site with little tech background. Also, for someone who does know what's being offered, they should be able to find what they are looking for fast.
 - A neutral colour scheme will be used for the same reasons as above.
-- The site will comprise of one main page, comprised of three sections; 'what we do/pricing', 'case studies carrousel', 'personal pitch/contact information'.
+- The site will comprise of one main page, comprised of four sections; 'what we do' 'pricing', 'case studies carrousel', 'personal pitch/contact information'.
 - Each case study will be on it's own page to go into detail.
 - The quiz will be in a pop up window.
 - A fixed navigation bar will be fixed at the top of each page and include a link for each section of the main page, plus a highlighted link for the quiz and a contact button.
@@ -43,6 +43,13 @@ Website wireframe:
 
 Javascript pop up quiz wireframe:
 ![Javacript pop up quiz wireframe](/assets/images/readme_images/Portfolio_project_javascript_wireframe.png)
+
+### Quiz
+- The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
+- The questions will be stored in an array; each question and answer pair in an object.
+- The quiz will be initiated by a button. When initiated, it will take place in a pop up window.
+- The questions will be cycled through with previous and next buttons.
+- A submit button wil call feeback option, based on the answers given.
 
 - End design similarity/difference
   - The wireframes were largely the same as the finished product, the main differences were some sizing of elements and a bootstrap carousel was used instead of a tile configuration for the photos in the commission gallery page.
@@ -97,8 +104,9 @@ Cloning the Repository:
   - Repository page > Code > local > HTTPS > copy link > clone in code editor.
 
 ### Credits
-The colour pallet was found on https://mycolor.space/
-Globe image used as a background https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
+The colour pallet was found on - https://mycolor.space/
+Globe image used as a background - https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
+The quiz pop up window was based loosly on Bootstraps modal example in the documentation - https://getbootstrap.com/docs/5.3/components/modal/
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
 https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
 https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  

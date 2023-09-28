@@ -71,8 +71,7 @@ body {
 /* containers */
 
 .content-container{
-    padding: 10vh 0px;
-    font-family: 'Lato', sans-serif;
+    padding: 12vh 0px;
 }
 
 /* block dividers */
@@ -84,6 +83,31 @@ body {
     margin: 20px auto;
     padding: 0;
 } */
+
+/* buttons */
+.btn{
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-family: 'roboto slab', sans-serif;
+
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.btn:hover{
+    opacity: 0.8;
+}
+
+
+.contact-button{
+    font-weight: 400;
+}
+.quiz-button{
+    margin-right: 20px;
+    font-weight: 600;
+}
 
 
 /* navigation bar */
@@ -131,7 +155,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 .cover-text{
     margin-left: 12%;
-    max-width: 500px;
+    max-width: 550px;
 }
 .cover-text h2{
     font-size: 40px;
@@ -154,56 +178,85 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 
 /* card section */
-.circle-container{
-    height: 500px;
-    position: relative;
+.cards-container{
+    font-size: 18px;
+    font-weight: 400;
 }
-.circle{
-    border: 3px solid black;
-    border-radius: 50%;
-    height: 500px;
-    width: 65%;
-    margin: 0 15%;
-}
-#circle1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin: 18px;
-}
-#circle2{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 18px;
-}
-#circle1 div, #circle2 div{
-    margin-right: 8rem;
-    margin-left: 8rem;
-    width: 180px;
-}
-
-#middle{
-    position: absolute;
-    top: 180px;
-    left: 43a%;
-    width: 180px;
-
-}
-.circle ul, #middle ul{
+.cards-container ul{
     list-style-type: none;
     padding: 0;
     text-align: center;
 }
-.circle li, #middle li{
-    padding-bottom: 6px;
+.cards-container h4{
+    font-size: 24px;
+    font-weight: 600;
 }
+.cards-container li{
+    padding-bottom: 8px;
+}
+/* circle container */
+.circle-container{
+    height: 650px;
+    position: relative;
+    margin-top: 7vh;
+    font-weight: 500;
+    padding: 30px 10px;
+}
+.circle{
+    border-radius: 50%;
+    height: 500px;
+    width: 65%;
+    margin: 0 20%;
+}
+#circle1{
+    border: 3px solid #436A77;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 50px 30px;
+}
+#circle2{
+    border: 3px solid #5C8D93;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 50px 30px;
+}
+#circle1 div, #circle2 div{
+    margin-right: 11rem;
+    margin-left: 10rem;
+    width: 190px;
+}
+#middle{
+    position: absolute;
+    bottom: 235px;
+    left: 43%;
+    width: 180px;
+}
+
+/* pop-up window */
+#popup-window {
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+  }        
+
 
 
 
@@ -273,40 +326,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 
 
 
-/* buttons */
-.btn{
-    font-weight: 300;
-    border-radius: 3px;
-    padding: 10px 15px;
-    font-family: 'roboto slab', sans-serif;
 
-    transition: 0.3s;
-    -moz-transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-}
-.btn:hover{
-    opacity: 0.8;
-}
-.btn-green{
-    background-color: seagreen;
-    color: white;
-}
-.btn-green:hover{
-    background-color: seagreen;
-    color: white;
-}
-
-.contact-button{
-    font-weight: 400;
-}
-.contact-button:hover{
-    opacity: 0.8;
-}
-.get-in-touch{
-    padding:12px;
-    margin: 8px 30px ;
-}
 
 
 
