@@ -240,22 +240,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     width: 180px;
 }
 
-/* pop-up window */
-#popup-window {
-    position: fixed;
-    width: 90vw;
-    height: 90vh;
-    background: white;
-    border: 1px solid black;
-    padding: 10px;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: none;
-  }        
+     
 
 
 
@@ -319,8 +304,37 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     font-family: 'lato', sans-serif;
 }
 
-
-
+/* hidden html */
+/* .popup-header{
+    max-height: 85px;
+} */
+.popup-footer{
+    margin-top: auto;
+    margin-bottom: 23px;
+}
+/* .popup-body{
+    margin: auto 0;
+} */
+.popup-container{
+    display: flex;
+    flex-direction: column;
+}
+/* pop-up window */
+#popup-window {
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    background: white;
+    border: 1px solid black;
+    padding: 10px 0;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+  }   
 
 
 
