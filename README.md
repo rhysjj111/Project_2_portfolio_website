@@ -45,15 +45,15 @@ Javascript pop up quiz wireframe:
 ![Javacript pop up quiz wireframe](/assets/images/readme_images/Portfolio_project_javascript_wireframe.png)
 
 ### Quiz
+![JavaScript workflow](/assets/images/readme_images/JS_QUIZ_FLOW.png)
 - The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
 - The questions will be stored in an array; each question and answer pair in an object.
-- The quiz will be initiated by a button. When initiated, it will take place in a pop up window.
-- The questions will be cycled through with previous and next buttons.
-- A submit button wil call feeback option, based on the answers given.
+- The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
+- A submit button wil call feeback a option, based on the answers given.
+- Data validation is required to ensure an answer is selected before cycling to next question.
 
 - End design similarity/difference
-  - The wireframes were largely the same as the finished product, the main differences were some sizing of elements and a bootstrap carousel was used instead of a tile configuration for the photos in the commission gallery page.
-  - I had made these changes because it just looked better visualy in practice
+  - 
 
 ### Colour scheme
 ![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
@@ -62,8 +62,11 @@ The colour pallet was found on https://mycolor.space/
 ### Testing 
 
 #### Issues
-- Images
-  - I had a problem getting images to be responsive when moving from desktop to mobile, especially the about.html photo and the photos in the carousel. I had to manually resize the about me photo because I couldn't figure out how to scale it up while still becoming responsive at a smaller screen size.
+- Javascript functions not working
+  - Some of my funtions were onlt working independanly (when the other ones were hidden) when writing the quiz JS. I whittled it down to the const variable 'questionsAndAnswers' was causing issues when at the top of the page. I temporarily worked around this by putting it at the bottom of the page until I find a better solution. I later found out there was an error in the variable code.
+
+- pop-up quiz window CSS
+  - I wanted to get the layout of the quiz pop-up window configured using only Bootstraps grid system. I spent a while trying to get the footer of the window to stay at the bottom without affecting other elements. I could not achieve this and in the end had to impliment some custom CSS, changing the display properties of the outer 'div' container and the margin-top of the footer.
 
 - Discount banner
   - I had an issue getting the discount banner (at the top of each page) to remain within the size of the viewport. The solution was to remove the margins of the container holding the banner.
@@ -107,6 +110,7 @@ Cloning the Repository:
 The colour pallet was found on - https://mycolor.space/
 Globe image used as a background - https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
 The quiz pop up window was based loosly on Bootstraps modal example in the documentation - https://getbootstrap.com/docs/5.3/components/modal/
+I used this article to get the backbone of my pop-up window JS quiz - https://www.linkedin.com/advice/3/how-can-you-create-pop-up-window-html-javascript-skills-html
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
 https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
 https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  

@@ -49,7 +49,7 @@
                     <div class="ms-lg-auto me-lg-5">
                         <ul class="navbar-nav">
                             <li class="d-block">
-                                <a class="btn btn-light quiz-button bgc-1a fc-7" id="quiz-button" >Take the Quiz! <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
+                                <a class="btn btn-light quiz-button bgc-1a fc-7" id="quiz-initiate-button" >Take the Quiz! <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                                 <a class="btn btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal" >Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                             </li> 
                             
@@ -284,56 +284,63 @@
 
         <!-- popup html -->
         <div id="popup-window" class="d-none">
-            <div class="container-fluid popup-container h-100">
-                    <div id="quiz-header-container" class="quiz-header-container modal-header">
-                        <h2 class="modal-title quiz-header" id="quiz-header">Your details</h2>
-                        <button type="button" class="btn-close" id="btn-quiz-close" aria-label="Close"></button>
+            <div class="container-fluid quiz-container h-100">
+                <div id="quiz-header-container" class="quiz-header-container modal-header">
+                    <h2 class="modal-title quiz-title display-6">Your details</h2>
+                    <h2 class="modal-title quiz-title display-6 d-none">Questions</h2>
+                    <button type="button" class="btn-close" id="btn-quiz-close" aria-label="Close"></button>
+                </div>
+                <div class="quiz-body-container modal-body row align-items-center justify-content-center">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="quiz-details-container col-12 col-lg-9" id="quiz-details-container">
+                             <form id="quiz-details-form">
+                                <div class="form-group mb-3">
+                                    <label for="quiz-details-name" class="form-label" >Name*</label>
+                                    <input id="quiz-details-name" type="text" name="name" class="form-control form-control-lg"
+                                    placeholder="Please enter your name" required="required" data-error="Full name is required.">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="quiz-details-company-name" class="form-label" >Company name*</label>
+                                    <input id="quiz-details-company-name" type="text" name="company-name" class="form-control form-control-lg"
+                                    placeholder="Please enter your name" required="required" data-error="Company name is required.">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="quiz-details-email" class="form-label">Email*</label>
+                                    <input id="quiz-details-email" type="email" name="email" class="form-control form-control-lg" 
+                                    placeholder="Please enter your email" required="required" data-error="Valid email is required.">
+                                </div> 
+                            </form>
+                        </div>                    
                     </div>
-                    <div class="popup-body modal-body row align-items-center justify-content-center">
-                        <div class="row justify-content-center">
-                            <div class="popup-question-container col-12 col-lg-9">
-                                <form id="quiz-details-form">
-                                    <div class="form-group mb-3">
-                                        <label for="quiz-details-name" class="form-label" >Name*</label>
-                                        <input id="quiz-details-name" type="text" name="name" class="form-control form-control-lg"
-                                        placeholder="Please enter your name" required="required" data-error="Full name is required.">
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="quiz-details-name" class="form-label" >Name*</label>
-                                        <input id="quiz-details-name" type="text" name="name" class="form-control form-control-lg"
-                                        placeholder="Please enter your name" required="required" data-error="Full name is required.">
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="quiz-details-email" class="form-label">Email*</label>
-                                        <input id="quiz-details-email" type="email" name="email" class="form-control form-control-lg" 
-                                        placeholder="Please enter your email" required="required" data-error="Valid email is required.">
-                                    </div> 
-                                </form>
-                            </div>                    
+                    <div class="row justify-content-center align-items-center">
+                        <div class="quiz-question-container col-12 col-lg-9" id="quiz-question-container">
+                            
+                        </div>                    
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="quiz-answer-container" class="quiz-answer-container col-6">
+                            <ul></ul>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="popup-answer-container col-6">
-                                
-                            </div>
-                            <div class="col-3 popup-reference-container">
+                        <div class="col-3 quiz-reference-container">
 
-                            </div>
-                        </div>                
-                    </div>
-                    
-                    <div class="popup-footer modal-footer row">
-                        <div id= "footer-content" class="col text-center">
-                            <button id="next-button" class = "d-inline">Next</button>
                         </div>
-                    </div>
-                    
+                    </div>                
+                </div>
                 
+                <div class=" modal-footer row">
+                    <div id= "quiz-footer-container" class="col text-center">
+                        <button id="previous-button" class="d-none" increment=-1>Previous</button>
+                        <button id="next-button" class="" increment=1>Next</button>
+                        <button id="submit-button" class="d-none">Submit</button>
+                    </div>
+                </div>           
             </div>
         </div>
         <!-- /popup html -->
-        button#
+        
+        <h2 id="quiz-header-new" class="modal-title quiz-header display-6">Questions</h2>
         <button id="previous-button" class="d-inline">Previous</button>
-        <h2 id="quiz-header-new" class="modal-title quiz-header">Questions</h2>
+        
 
         <!-- question cycle buttons -->
 

@@ -305,17 +305,12 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
 }
 
 /* hidden html */
-/* .popup-header{
-    max-height: 85px;
-} */
-.popup-footer{
+
+.quiz-footer-container{
     margin-top: auto;
     margin-bottom: 23px;
 }
-/* .popup-body{
-    margin: auto 0;
-} */
-.popup-container{
+.quiz-container{
     display: flex;
     flex-direction: column;
 }
