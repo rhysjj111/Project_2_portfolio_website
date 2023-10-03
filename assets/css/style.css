@@ -314,7 +314,7 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     display: flex;
     flex-direction: column;
 }
-/* pop-up window */
+/* pop-up quiz */
 #popup-window {
     position: fixed;
     width: 90vw;
@@ -328,8 +328,11 @@ body > div.container-fluid.navalert-container.p-0.m-0 > nav > div > button{
     bottom: 0;
     left: 0;
     z-index: 10;
-    display: none;
-  }   
+    display: block;
+}
+#quiz-answer-list{
+    list-style-type: none;
+}
 
 
 

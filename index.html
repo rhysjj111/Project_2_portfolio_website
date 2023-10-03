@@ -286,8 +286,8 @@
         <div id="popup-window" class="d-none">
             <div class="container-fluid quiz-container h-100">
                 <div id="quiz-header-container" class="quiz-header-container modal-header">
-                    <h2 class="modal-title quiz-title display-6">Your details</h2>
-                    <h2 class="modal-title quiz-title display-6 d-none">Questions</h2>
+                    <h2 class="modal-title quiz-title display-6" id="quiz-title-details">Your details</h2>
+                    <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-questions">Questions</h2>
                     <button type="button" class="btn-close" id="btn-quiz-close" aria-label="Close"></button>
                 </div>
                 <div class="quiz-body-container modal-body row align-items-center justify-content-center">
@@ -319,7 +319,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div id="quiz-answer-container" class="quiz-answer-container col-6">
-                            <ul></ul>
+                            <ul id="quiz-answer-list"></ul>
                         </div>
                         <div class="col-3 quiz-reference-container">
 
@@ -330,8 +330,9 @@
                 <div class=" modal-footer row">
                     <div id= "quiz-footer-container" class="col text-center">
                         <button id="previous-button" class="d-none" increment=-1>Previous</button>
-                        <button id="next-button" class="" increment=1>Next</button>
+                        <button id="next-button" class="d-none" increment=1>Next</button>
                         <button id="submit-button" class="d-none">Submit</button>
+                        <button id="start-button" class="">Start</button>
                     </div>
                 </div>           
             </div>

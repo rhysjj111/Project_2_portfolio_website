@@ -53,7 +53,9 @@ Javascript pop up quiz wireframe:
 - Data validation is required to ensure an answer is selected before cycling to next question.
 
 - End design similarity/difference
-  - 
+  - The quiz has quite a few differences, mainly things that were overlooked in the design stage. A close button, to close the quiz was added in after design, as this was not initially conscidered.  
+  - A start button was also added at the first 'details' section, as this made it easier to seperate the details from the questions when it came to cycling through the questions.
+
 
 ### Colour scheme
 ![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
@@ -65,14 +67,20 @@ The colour pallet was found on https://mycolor.space/
 - Javascript functions not working
   - Some of my funtions were onlt working independanly (when the other ones were hidden) when writing the quiz JS. I whittled it down to the const variable 'questionsAndAnswers' was causing issues when at the top of the page. I temporarily worked around this by putting it at the bottom of the page until I find a better solution. I later found out there was an error in the variable code.
 
-- pop-up quiz window CSS
+- Pop-up quiz window CSS
   - I wanted to get the layout of the quiz pop-up window configured using only Bootstraps grid system. I spent a while trying to get the footer of the window to stay at the bottom without affecting other elements. I could not achieve this and in the end had to impliment some custom CSS, changing the display properties of the outer 'div' container and the margin-top of the footer.
 
-- Discount banner
-  - I had an issue getting the discount banner (at the top of each page) to remain within the size of the viewport. The solution was to remove the margins of the container holding the banner.
+- Appending list items
+  - I spent a while trying to append the 'radio button' and corresponding labels at the same time using appendChild() function. After some research, I found I could do that with append() function from: https://developer.mozilla.org/en-US/docs/Web/API/Element/append
 
-- Spacing/sizing
-  - Generally, the main difficulty I came across was getting everything in position whilst remaining responsive. I put this down to getting to know CSS and how bootstrap works rather than a bug that could be fixed.
+- Vague planning
+  - Some key areas were overlooked at the planning phase, which would have made it a lot easier when it came to writing the code. 
+    - How the users answers would be stored and the scores added up was not well thought through.
+    - Key features, such as a close button on the popup window was not conscidered.
+    - Two of the questions are only accessible as a result of a certain answer from a previous question; the logistics of this wasn't thought out, so again, when it came to writing the code, made it a lot more difficult.
+
+- Cycling through the questions
+  - Initially, the questions were being cycled through including the details section, with one function. It cause an issue moving back and forth with the next and previous buttons. This was overcome by making a function for cycling forward and a seperate function for cycling backwards, as well as making a seperate funtion for moving from the 'details' section to the 'questions' section.
 
 #### Features
 
@@ -111,6 +119,7 @@ The colour pallet was found on - https://mycolor.space/
 Globe image used as a background - https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
 The quiz pop up window was based loosly on Bootstraps modal example in the documentation - https://getbootstrap.com/docs/5.3/components/modal/
 I used this article to get the backbone of my pop-up window JS quiz - https://www.linkedin.com/advice/3/how-can-you-create-pop-up-window-html-javascript-skills-html
+'tutorials point' helped me with a boiler plate for my answers list in the pop-up quiz - https://www.tutorialspoint.com/how-to-dynamically-create-radio-buttons-using-an-array-in-javascript#:~:text=This%20process%20can%20be%20automated,createElement()%20and%20appendChild().
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
 https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
 https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  
