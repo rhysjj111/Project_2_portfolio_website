@@ -50,7 +50,7 @@
                         <ul class="navbar-nav">
                             <li class="d-block">
                                 <a class="btn btn-light quiz-button bgc-1a fc-7" id="quiz-initiate-button" >Take the Quiz! <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
-                                <a class="btn btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal" >Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
+                                <a class="btn btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                             </li> 
                             
                         </ul>
@@ -288,6 +288,7 @@
                 <div id="quiz-header-container" class="quiz-header-container modal-header">
                     <h2 class="modal-title quiz-title display-6" id="quiz-title-details">Your details</h2>
                     <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-questions">Questions</h2>
+                    <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-feedback">Feedback</h2>
                     <button type="button" class="btn-close" id="btn-quiz-close" aria-label="Close"></button>
                 </div>
                 <div class="quiz-body-container modal-body row align-items-center justify-content-center">
@@ -333,6 +334,8 @@
                         <button id="next-button" class="d-none" increment=1>Next</button>
                         <button id="submit-button" class="d-none">Submit</button>
                         <button id="start-button" class="">Start</button>
+                        <button id="next-button-feedback" class="d-none">Next</button>
+                        <a class="btn btn-light contact-button bgc-2 fc-1a d-none" data-bs-toggle="modal" data-bs-target="#contact-modal" id="contact-btn">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
                     </div>
                 </div>           
             </div>

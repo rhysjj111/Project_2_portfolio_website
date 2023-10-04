@@ -51,6 +51,29 @@ const questionsAndAnswers = [
     resource: ""}
 ];
 
+const feedback = {
+    automation:[
+        `Anything carried out on a computer/mobile can be automated, and is not limited to the examples given or the imagination. 
+        It can provide uniformity to your business process which can inspire confidence deom clients, employees or suppliers.
+        Free your staff from labour intensive tasks so they spend time pushing your company towards it's goals.`,
+        `You scored lower for automation. However, you're not alone!
+        If you'd like a free consultation to see how you can get ahead of the competition, get in touch.`,
+        `Your company already uses automation for some processes, which is brilliant to see!
+        If you'd like a free consultation to see if your process can be refined, get in touch.`
+    ],
+    dataAnalysis:[
+        `Future proof your company. Collecting data now will give benefits in the short term, but the real magic will happen after `+
+        `some years time.
+        By then you will have strong data, which can give you reliable, essential insights.
+        When data is sorted and presented correctly, it can give confidence to move in a particular direction, even drop a venture `+
+        `which is no longer serving your company.`,
+        `Your company scored lower for data analysis. Now is the perfect time to start future proofing. 
+        Get in touch for a free consultation.`,
+        `Your company scored high for data analysis, which means you are already taking steps to future proofing your company.
+        Get in touch for a free consultation, to see if your data is being managed optimally.`
+    ]
+}
+
 // containers
 const popupHtml = document.querySelector('#popup-window');
 const quizHeaderContainer = document.querySelector('#quiz-header-container');
@@ -60,6 +83,7 @@ const quizAnswerContainer = document.querySelector('#quiz-answer-container');
 const quizDetailsContainer = document.querySelector('#quiz-details-container');
 const quizTitleQuestions = document.querySelector('#quiz-title-questions');
 const quizTitleDetails = document.querySelector('#quiz-title-details');
+const quizTitleFeedback = document.querySelector('#quiz-title-feedback');
 
 // buttons
 const quizBtnInitiate = document.querySelector('#quiz-initiate-button');
@@ -68,6 +92,9 @@ const quizBtnPrevious = document.querySelector('#previous-button');
 const quizBtnNext = document.querySelector('#next-button');
 const quizBtnSubmit = document.querySelector('#submit-button');
 const quizBtnClose = document.querySelector('#btn-quiz-close');
+const quizBtnNextFeedback = document.querySelector('#next-button-feedback');
+const contactButton = document.querySelector('#contact-btn');
+
 
 // toggles
 function toggleTitleQuestions(){quizTitleQuestions.classList.toggle('d-none')};
@@ -77,15 +104,17 @@ function toggleNext(){quizBtnNext.classList.toggle('d-none')};
 function toggleSubmit(){quizBtnSubmit.classList.toggle('d-none')};
 function toggleDetails(){quizDetailsContainer.classList.toggle('d-none')};
 function toggleTitleDetails(){quizTitleDetails.classList.toggle('d-none')};
+function toggleTitleFeedback(){quizTitleFeedback.classList.toggle('d-none')};
+function toggleNextFeedback(){quizBtnNextFeedback.classList.toggle('d-none')};
+function toggleContact(){contactButton.classList.toggle('d-none')};
 function togglePopup(){popupHtml.classList.toggle('d-none')};
 
-
-// toggle quiz pop-up window
+// ----------------------------------------toggle quiz pop-up window----------------------------------------
 function toggleQuiz(event){ 
     togglePopup();
 }
 
-// start quiz button clicked
+// ----------------------------------------start quiz----------------------------------------
 function startQuiz(event){
     toggleStart();
     toggleNext();
@@ -95,16 +124,27 @@ function startQuiz(event){
     appendQAndA(0);
 }
 
-// clear question and answer containers 
+// ----------------------------------------clear question and answer containers----------------------------------------
 function clearContainers(){
     quizQuestionContainer.innerHTML = "";
     quizAnswerContainer.innerHTML = `<ul id="quiz-answer-list"></ul>`;
 }
 
-// append question and answers to containers
+//---------------------------------------- radio identification/assignation ----------------------------------------
+function radioId(){
+    let radioAnswer = document.querySelector(`input[name="question-${questionNumber}"]:checked`);
+    // alert if no answer selected.
+    if(!radioAnswer){alert("### Please select an answer..")};
 
+    //asign score
+    answerScore[questionNumber] = Number(radioAnswer.value);
+    return answerScore[questionNumber]
+}
+
+// ----------------------------------------append question and answers to containers----------------------------------------
 let questionNumber = 0;
-
+let automationScore = 0;
+let dataAnalysisScore = 0;
 function appendQAndA(questionNumber){
 
     //clear containers
@@ -139,26 +179,80 @@ function appendQAndA(questionNumber){
     });
 }
 
-function cycleForward(event){
+// ----------------------------------------append feedback----------------------------------------
+function appendFeedback(type, score){
+
+    //clear containers
+    clearContainers();
+
+    if (type === 1){
+        // update question container 
+        quizQuestionContainer.innerHTML = feedback.automation[0];
+
+        //  update answer container 
+        if(score < 3){
+            quizAnswerContainer.innerHTML = feedback.automation[1];
+        } else {
+            quizAnswerContainer.innerHTML = feedback.automation[2];
+        };
+    } else{
+        // update question container 
+        quizQuestionContainer.innerHTML = feedback.dataAnalysis[0];
     
-    console.log(document.querySelector(`input[name="question-${questionNumber}"]:checked`).value);
+        //  update answer container 
+        if(score < 3){
+            quizAnswerContainer.innerHTML = feedback.dataAnalysis[1];
+        } else {
+            quizAnswerContainer.innerHTML = feedback.dataAnalysis[2];
+        }
+    }    
+}
 
-    questionNumber += Number(event.target.getAttribute('increment'))
+//----------------------------------------cycle forward----------------------------------------
+var answerScore = {};
+
+function cycleForward(event){
+    radioId()
+
+    //record score
+    if(questionNumber < 3){
+        automationScore += answerScore[questionNumber];
+        console.log("automation score: ",typeof automationScore);
+    } else {
+        dataAnalysisScore += answerScore[questionNumber];
+        console.log("data score: ", dataAnalysisScore);
+    }
+
+    // cycle question
+    questionNumber += Number(event.target.getAttribute('increment'));
     appendQAndA(questionNumber);
-
+    
+    // adjust html
     if (questionNumber === 1){
         togglePrevious();
     } else if(questionNumber === 6){
         toggleNext()
         toggleSubmit() 
-    }       
+    }          
 }
 
-function cycleBackward(event){
+//----------------------------------------cycle backwards----------------------------------------
+function cycleBackward(event){   
+    //remove score
+    let prevQuestionNumber = questionNumber - 1;
+    if(questionNumber < 4){
+        automationScore -= answerScore[prevQuestionNumber];
+        console.log("automation score: ", automationScore);
+    }else{
+        dataAnalysisScore -= answerScore[prevQuestionNumber];
+        console.log("data score: ", dataAnalysisScore);
+    }
 
+    // cycle question
     questionNumber += Number(event.target.getAttribute('increment'));
     appendQAndA(questionNumber);
 
+    // adjust html
     if(questionNumber === 0){     
         togglePrevious()
     }else if(questionNumber === 5){
@@ -167,15 +261,38 @@ function cycleBackward(event){
     }
 }
 
+//----------------------------------------cycle feedback----------------------------------------
+function cycleFeedback(event){
+    if (event.target.id === "submit-button"){
+        radioId();
+        dataAnalysisScore += answerScore[questionNumber];
+        toggleTitleFeedback();
+        toggleTitleQuestions();
+        togglePrevious();
+        toggleSubmit();
+        toggleNextFeedback();
+
+        appendFeedback(1, automationScore);
+    } else {
+        toggleNextFeedback();
+        toggleContact();
+
+        appendFeedback(2, dataAnalysisScore);
+        
+    } 
+}
+
 // event listeners 
 quizBtnInitiate.addEventListener('click', toggleQuiz);
 quizBtnStart.addEventListener('click', startQuiz)
 quizBtnNext.addEventListener('click', cycleForward);
 quizBtnPrevious.addEventListener('click', cycleBackward);
 quizBtnClose.addEventListener('click', toggleQuiz);
+quizBtnSubmit.addEventListener('click', cycleFeedback);
+quizBtnNextFeedback.addEventListener('click', cycleFeedback);
 
 
-// --------------------------------------------change alternating list colours: cards section
+// --------------------------------------------change alternating list colours: cards section----------------------------------------
 const benefitLists = document.querySelectorAll('.benefits-list');
 
 for(const benefitList in benefitLists){

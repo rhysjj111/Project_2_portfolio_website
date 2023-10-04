@@ -49,7 +49,7 @@ Javascript pop up quiz wireframe:
 - The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
 - The questions will be stored in an array; each question and answer pair in an object.
 - The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
-- A submit button wil call feeback a option, based on the answers given.
+- A submit button will call feeback a option, based on the answers given.
 - Data validation is required to ensure an answer is selected before cycling to next question.
 
 - End design similarity/difference
@@ -61,26 +61,39 @@ Javascript pop up quiz wireframe:
 ![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
 The colour pallet was found on https://mycolor.space/
 
-### Testing 
+## Testing 
 
-#### Issues
+### Issues
+
+#### JS
 - Javascript functions not working
-  - Some of my funtions were onlt working independanly (when the other ones were hidden) when writing the quiz JS. I whittled it down to the const variable 'questionsAndAnswers' was causing issues when at the top of the page. I temporarily worked around this by putting it at the bottom of the page until I find a better solution. I later found out there was an error in the variable code.
+  - Some of my funtions weren't working when initially writing the quiz JS. I deduced the variable 'questionsAndAnswers' was causing issues. I temporarily worked around this by putting it at the bottom of the page. I later found out there was an error in the variable code and corrected.
+- Appending answers to answer container
+  -  I was attempting to append the 'radio button' and corresponding labels at the same time using appendChild() function. After some research, I found I could do that with append() function from: [Mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+- Cycling through the questions
+  - Initially, the questions were being cycled through including the details section, with one function. It caused an issue moving back and forth with the next and previous buttons. This was overcome by making a function for cycling forward and a seperate function for cycling backwards, as well as making a seperate funtion for moving from the 'details' section to the 'questions' section.
+- Keeping score
+  - I was having touble accessing the currentScore variable from cycleForward function for cycleBackward function to keep track of the score moving both forwards, and backwards. I had to create an object, var answersGiven, outside of the cycleForward function (which was recording the score). The current score was then added to the global variable as a property, and could be accessed from the cycleBackward function. [Stack overflow](https://stackoverflow.com/questions/407048/accessing-variables-from-other-functions-without-using-global-variables)
+  - Going back more than onces caused the cycleBackward function to give an inacurate record of score because it was subtracting the most recent ansawer each time. The solution to this was storing the score for each question in answersGiven. 
+
+
+#### CSS
+
+
 
 - Pop-up quiz window CSS
   - I wanted to get the layout of the quiz pop-up window configured using only Bootstraps grid system. I spent a while trying to get the footer of the window to stay at the bottom without affecting other elements. I could not achieve this and in the end had to impliment some custom CSS, changing the display properties of the outer 'div' container and the margin-top of the footer.
 
-- Appending list items
-  - I spent a while trying to append the 'radio button' and corresponding labels at the same time using appendChild() function. After some research, I found I could do that with append() function from: https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+
 
 - Vague planning
   - Some key areas were overlooked at the planning phase, which would have made it a lot easier when it came to writing the code. 
     - How the users answers would be stored and the scores added up was not well thought through.
     - Key features, such as a close button on the popup window was not conscidered.
     - Two of the questions are only accessible as a result of a certain answer from a previous question; the logistics of this wasn't thought out, so again, when it came to writing the code, made it a lot more difficult.
+    - No conscideration of validation to prompt the user to select an option. Neither for a notification that the quiz is complete after the quiz is finished.
 
-- Cycling through the questions
-  - Initially, the questions were being cycled through including the details section, with one function. It cause an issue moving back and forth with the next and previous buttons. This was overcome by making a function for cycling forward and a seperate function for cycling backwards, as well as making a seperate funtion for moving from the 'details' section to the 'questions' section.
+
 
 #### Features
 
