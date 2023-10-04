@@ -79,11 +79,13 @@ function toggleDetails(){quizDetailsContainer.classList.toggle('d-none')};
 function toggleTitleDetails(){quizTitleDetails.classList.toggle('d-none')};
 function togglePopup(){popupHtml.classList.toggle('d-none')};
 
-// toggle quiz window
+
+// toggle quiz pop-up window
 function toggleQuiz(event){ 
     togglePopup();
 }
 
+// start quiz button clicked
 function startQuiz(event){
     toggleStart();
     toggleNext();
@@ -93,8 +95,19 @@ function startQuiz(event){
     appendQAndA(0);
 }
 
-// append question and answers 
+// clear question and answer containers 
+function clearContainers(){
+    quizQuestionContainer.innerHTML = "";
+    quizAnswerContainer.innerHTML = `<ul id="quiz-answer-list"></ul>`;
+}
+
+// append question and answers to containers
+
+let questionNumber = 0;
+
 function appendQAndA(questionNumber){
+
+    //clear containers
     clearContainers();
 
     // update question container 
@@ -105,14 +118,14 @@ function appendQAndA(questionNumber){
     let score = questionsAndAnswers[questionNumber]['score'];
     answerArray.forEach((answer,answerIndex) => {
         
-        // radio buttons
+        // generate radio buttons
         const radio = document.createElement('input');
         radio.type = 'radio';
         radio.name = `question-${questionNumber}`;
         radio.value = score[answerIndex];
         radio.id = `question-${questionNumber}`;
         
-        // labels
+        // generate labels
         const label = document.createElement('label');
         label.htmlFor = `question-${questionNumber}`;
         const labelDescription = document.createTextNode(answer);
@@ -126,58 +139,40 @@ function appendQAndA(questionNumber){
     });
 }
 
-// clear question and answer containers 
-function clearContainers(){
-    quizQuestionContainer.innerHTML = "";
-    quizAnswerContainer.innerHTML = `<ul id="quiz-answer-list"></ul>`;
-}
-
 function cycleForward(event){
-    let increment = questionNumber += Number(event.target.getAttribute('increment'))
+    
+    console.log(document.querySelector(`input[name="question-${questionNumber}"]:checked`).value);
+
+    questionNumber += Number(event.target.getAttribute('increment'))
+    appendQAndA(questionNumber);
+
     if (questionNumber === 1){
-        togglePrevious();  
-        increment;
-        appendQAndA(questionNumber); 
+        togglePrevious();
     } else if(questionNumber === 6){
-        quizBtnNext.classList.toggle('d-none');
-        quizBtnSubmit.classList.toggle('d-none');
-        increment;
-        appendQAndA(questionNumber);
-    } else{
-        increment;
-        appendQAndA(questionNumber);        
-    }
+        toggleNext()
+        toggleSubmit() 
+    }       
 }
+
 function cycleBackward(event){
-    let increment = questionNumber += Number(event.target.getAttribute('increment'))
-    if(questionNumber === 0){   
-        increment;
-        appendQAndA(questionNumber);
-        togglePrevious()        
-    } else{
-        increment;
-        appendQAndA(questionNumber);        
+
+    questionNumber += Number(event.target.getAttribute('increment'));
+    appendQAndA(questionNumber);
+
+    if(questionNumber === 0){     
+        togglePrevious()
+    }else if(questionNumber === 5){
+        toggleSubmit() 
+        toggleNext()      
     }
 }
-
-
-// next question funtion
-
-let questionNumber = 0;
-// cycle questions OR WINDOW MODIFICATION
-
-
-
 
 // event listeners 
 quizBtnInitiate.addEventListener('click', toggleQuiz);
-quizBtnClose.addEventListener('click', toggleQuiz);
 quizBtnStart.addEventListener('click', startQuiz)
 quizBtnNext.addEventListener('click', cycleForward);
 quizBtnPrevious.addEventListener('click', cycleBackward);
-
-
-
+quizBtnClose.addEventListener('click', toggleQuiz);
 
 
 // --------------------------------------------change alternating list colours: cards section
