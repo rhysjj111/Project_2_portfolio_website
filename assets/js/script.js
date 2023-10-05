@@ -83,7 +83,8 @@ const quizAnswerContainer = document.querySelector('#quiz-answer-container');
 const quizDetailsContainer = document.querySelector('#quiz-details-container');
 const quizTitleQuestions = document.querySelector('#quiz-title-questions');
 const quizTitleDetails = document.querySelector('#quiz-title-details');
-const quizTitleFeedback = document.querySelector('#quiz-title-feedback');
+const quizTitleFeedbackAuto = document.querySelector('#quiz-title-feedback-automation');
+const quizTitleFeedbackData = document.querySelector('#quiz-title-feedback-data-analysis');
 
 // buttons
 const quizBtnInitiate = document.querySelector('#quiz-initiate-button');
@@ -104,7 +105,8 @@ function toggleNext(){quizBtnNext.classList.toggle('d-none')};
 function toggleSubmit(){quizBtnSubmit.classList.toggle('d-none')};
 function toggleDetails(){quizDetailsContainer.classList.toggle('d-none')};
 function toggleTitleDetails(){quizTitleDetails.classList.toggle('d-none')};
-function toggleTitleFeedback(){quizTitleFeedback.classList.toggle('d-none')};
+function toggleTitleFeedbackAuto(){quizTitleFeedbackAuto.classList.toggle('d-none')};
+function toggleTitleFeedbackData(){quizTitleFeedbackData.classList.toggle('d-none')};
 function toggleNextFeedback(){quizBtnNextFeedback.classList.toggle('d-none')};
 function toggleContact(){contactButton.classList.toggle('d-none')};
 function togglePopup(){popupHtml.classList.toggle('d-none')};
@@ -112,16 +114,6 @@ function togglePopup(){popupHtml.classList.toggle('d-none')};
 // ----------------------------------------toggle quiz pop-up window----------------------------------------
 function toggleQuiz(event){ 
     togglePopup();
-}
-
-// ----------------------------------------start quiz----------------------------------------
-function startQuiz(event){
-    toggleStart();
-    toggleNext();
-    toggleTitleDetails();
-    toggleTitleQuestions();
-    toggleDetails();
-    appendQAndA(0);
 }
 
 // ----------------------------------------clear question and answer containers----------------------------------------
@@ -141,6 +133,73 @@ function radioId(){
     return answerScore[questionNumber]
 }
 
+// ----------------------------------------start quiz----------------------------------------
+function startQuiz(event){
+    const userName = document.querySelector('#quiz-details-name').value;
+    const userEmail = document.querySelector('#quiz-details-email').value;
+    const userCompName = document.querySelector('#quiz-details-company-name').value;
+    
+    if(userName == null || userName == "" || userEmail == null || userEmail == "" ||userCompName == null || userCompName == ""   ){
+        alert('### Please fill in all fields!')
+    } else {
+        toggleStart();
+        toggleNext();
+        toggleTitleDetails();
+        toggleTitleQuestions();
+        toggleDetails();
+        appendQAndA(0);
+    }
+}
+
+//----------------------------------------cycle forward----------------------------------------
+var answerScore = {};
+
+function cycleForward(event){
+    radioId();
+
+    //record score
+    if(questionNumber < 3){
+        automationScore += answerScore[questionNumber];
+    } else {
+        dataAnalysisScore += answerScore[questionNumber];
+    }
+
+    // cycle question
+    questionNumber += Number(event.target.getAttribute('increment'));
+    appendQAndA(questionNumber);
+    
+    // adjust html
+    if (questionNumber === 1){
+        togglePrevious();
+    } else if(questionNumber === 6){
+        toggleNext()
+        toggleSubmit() 
+    }          
+}
+
+//----------------------------------------cycle backwards----------------------------------------
+function cycleBackward(event){   
+    //remove score
+    let prevQuestionNumber = questionNumber - 1;
+    if(questionNumber < 4){
+        automationScore -= answerScore[prevQuestionNumber];
+    }else{
+        dataAnalysisScore -= answerScore[prevQuestionNumber];
+    }
+
+    // cycle question
+    questionNumber += Number(event.target.getAttribute('increment'));
+    appendQAndA(questionNumber);
+
+    // adjust html
+    if(questionNumber === 0){     
+        togglePrevious()
+    }else if(questionNumber === 5){
+        toggleSubmit() 
+        toggleNext()      
+    }
+}
+ 
 // ----------------------------------------append question and answers to containers----------------------------------------
 let questionNumber = 0;
 let automationScore = 0;
@@ -179,6 +238,33 @@ function appendQAndA(questionNumber){
     });
 }
 
+//----------------------------------------cycle feedback----------------------------------------
+function cycleFeedback(event){
+    if (event.target.id === "submit-button"){
+        radioId();
+
+        // record score
+        dataAnalysisScore += answerScore[questionNumber];
+        
+        //toggle html content
+        toggleTitleFeedbackAuto();
+        toggleTitleQuestions();
+        togglePrevious();
+        toggleSubmit();
+        toggleNextFeedback();
+
+        appendFeedback(1, automationScore);
+    } else {
+        // toggle html content
+        toggleTitleFeedbackAuto();
+        toggleTitleFeedbackData();
+        toggleNextFeedback();
+        toggleContact();
+
+        appendFeedback(2, dataAnalysisScore);
+    } 
+}
+ 
 // ----------------------------------------append feedback----------------------------------------
 function appendFeedback(type, score){
 
@@ -187,7 +273,10 @@ function appendFeedback(type, score){
 
     if (type === 1){
         // update question container 
-        quizQuestionContainer.innerHTML = feedback.automation[0];
+        const userName = document.querySelector('#quiz-details-name').value;
+        const thankyouMessage =  `<h2>Thank you ${userName} for taking the time to complete our quiz!</h2><br>` ;
+        quizQuestionContainer.innerHTML = thankyouMessage + feedback.automation[0];
+        
 
         //  update answer container 
         if(score < 3){
@@ -208,80 +297,6 @@ function appendFeedback(type, score){
     }    
 }
 
-//----------------------------------------cycle forward----------------------------------------
-var answerScore = {};
-
-function cycleForward(event){
-    radioId()
-
-    //record score
-    if(questionNumber < 3){
-        automationScore += answerScore[questionNumber];
-        console.log("automation score: ",typeof automationScore);
-    } else {
-        dataAnalysisScore += answerScore[questionNumber];
-        console.log("data score: ", dataAnalysisScore);
-    }
-
-    // cycle question
-    questionNumber += Number(event.target.getAttribute('increment'));
-    appendQAndA(questionNumber);
-    
-    // adjust html
-    if (questionNumber === 1){
-        togglePrevious();
-    } else if(questionNumber === 6){
-        toggleNext()
-        toggleSubmit() 
-    }          
-}
-
-//----------------------------------------cycle backwards----------------------------------------
-function cycleBackward(event){   
-    //remove score
-    let prevQuestionNumber = questionNumber - 1;
-    if(questionNumber < 4){
-        automationScore -= answerScore[prevQuestionNumber];
-        console.log("automation score: ", automationScore);
-    }else{
-        dataAnalysisScore -= answerScore[prevQuestionNumber];
-        console.log("data score: ", dataAnalysisScore);
-    }
-
-    // cycle question
-    questionNumber += Number(event.target.getAttribute('increment'));
-    appendQAndA(questionNumber);
-
-    // adjust html
-    if(questionNumber === 0){     
-        togglePrevious()
-    }else if(questionNumber === 5){
-        toggleSubmit() 
-        toggleNext()      
-    }
-}
-
-//----------------------------------------cycle feedback----------------------------------------
-function cycleFeedback(event){
-    if (event.target.id === "submit-button"){
-        radioId();
-        dataAnalysisScore += answerScore[questionNumber];
-        toggleTitleFeedback();
-        toggleTitleQuestions();
-        togglePrevious();
-        toggleSubmit();
-        toggleNextFeedback();
-
-        appendFeedback(1, automationScore);
-    } else {
-        toggleNextFeedback();
-        toggleContact();
-
-        appendFeedback(2, dataAnalysisScore);
-        
-    } 
-}
-
 // event listeners 
 quizBtnInitiate.addEventListener('click', toggleQuiz);
 quizBtnStart.addEventListener('click', startQuiz)
@@ -299,7 +314,7 @@ for(const benefitList in benefitLists){
     const benefitListChild = benefitLists[benefitList].children
     for (bListItems in benefitListChild){
         if (bListItems % 2 === 0){
-            benefitListChild[bListItems].style.color = "#5C8D93";
+            benefitListChild[bListItems].style.fontWeight = "600";
         }
     }
 }

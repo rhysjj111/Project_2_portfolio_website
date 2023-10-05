@@ -25,9 +25,11 @@ To provide relevant information so potential customers can get any information q
 The features listed are achievable in terms of timescales and technology available.
 
 ### User stories
-- As a potential customer of Vale Business Solutions with little tech background, I would like to know what they are selling and have a general understanding of how that can be applied to my business.
-- I would also like to know things like costs/timescales/availability.
-- I want to know what the next steps are to get the ball rolling.
+- As a potential customer of Vale Business Solutions with little tech background, I would like to know; what they are selling, and get a general understanding of how that can be applied to my business.
+- I would also like to find out things like costs/timescales/availability.
+- I want to find out what the next steps are to get the ball rolling are if i'm interested in doing business.
+
+## Design
 
 ### Design choices
 - Minimum but essential information will be displayed to inform but not overwhelm anybody using the site with little tech background. Also, for someone who does know what's being offered, they should be able to find what they are looking for fast.
@@ -46,20 +48,28 @@ Javascript pop up quiz wireframe:
 
 ### Quiz
 ![JavaScript workflow](/assets/images/readme_images/JS_QUIZ_FLOW.png)
-- The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
-- The questions will be stored in an array; each question and answer pair in an object.
-- The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
-- A submit button will call feeback a option, based on the answers given.
-- Data validation is required to ensure an answer is selected before cycling to next question.
+
+- Plan
+  - The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
+  - The questions will be stored in an array; each question and answer pair in an object.
+  - The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
+  - A submit button will call feeback a option, based on the answers given.
+  - Data validation is required to ensure an answer is selected before cycling to next question.
 
 - End design similarity/difference
   - The quiz has quite a few differences, mainly things that were overlooked in the design stage. A close button, to close the quiz was added in after design, as this was not initially conscidered.  
-  - A start button was also added at the first 'details' section, as this made it easier to seperate the details from the questions when it came to cycling through the questions.
+  - A start button was also added at the first 'details' section, as this made it easier to seperate the 'details' section from the 'questions' section when it came to cycling through the questions.
+  - A progress bar was omitted due to time constraints. It was decided the progress bar was not essential to functionality and time was better spent elsewhere.
+  - It was proposed the scores would be added up with a 'total scores' function, after all the questions were cycled through. As we were only interested in the end score, for 'automation' and 'data analysis', and each answer had a predetermined score, I decided to add the scores in the 'cycle questions' function, incrementally, as the user moved through the quiz.
+  - I hadn't accounted for the wireframe of the 'feedback' section. I had to do this during the coding process. Rather than go back and design them, I used what was already available and put the feedback output in the 'questions' and 'answers' containers, changed the heading (from 'questions' to 'feedback'), and added a next button to cycle between 'automation' and 'data analysis' feedback.
+  - The flow diagram does not account for the 'feedback cycle' and 'feedback append' functions that replaced a proposed 'feedback' function.
+  - Otherwise the quiz was very similar in reality to design from the wireframes and flow diagram.
 
 
 ### Colour scheme
 ![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
-The colour pallet was found on https://mycolor.space/
+The colour pallet was found on [mycolor.space](https://mycolor.space/)
+Each colour was put into it's own css class name for font and background, so that I could easily switch between colours and deduce which combination looked best for each situation.
 
 ## Testing 
 
@@ -71,27 +81,22 @@ The colour pallet was found on https://mycolor.space/
 - Appending answers to answer container
   -  I was attempting to append the 'radio button' and corresponding labels at the same time using appendChild() function. After some research, I found I could do that with append() function from: [Mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
 - Cycling through the questions
-  - Initially, the questions were being cycled through including the details section, with one function. It caused an issue moving back and forth with the next and previous buttons. This was overcome by making a function for cycling forward and a seperate function for cycling backwards, as well as making a seperate funtion for moving from the 'details' section to the 'questions' section.
+  - Initially, the questions were being cycled through including the details section, with one function. It caused an issue moving back and forth with the next and previous buttons, as they became out of sync with regards to the question number. This was overcome by making a function for cycling forward, and a seperate function for cycling backwards, as well as making a seperate funtion for moving from the 'details' section, to the 'questions' section. Another function was used to move from the 'questions' section to the 'feedback' section.
 - Keeping score
-  - I was having touble accessing the currentScore variable from cycleForward function for cycleBackward function to keep track of the score moving both forwards, and backwards. I had to create an object, var answersGiven, outside of the cycleForward function (which was recording the score). The current score was then added to the global variable as a property, and could be accessed from the cycleBackward function. [Stack overflow](https://stackoverflow.com/questions/407048/accessing-variables-from-other-functions-without-using-global-variables)
-  - Going back more than onces caused the cycleBackward function to give an inacurate record of score because it was subtracting the most recent ansawer each time. The solution to this was storing the score for each question in answersGiven. 
-
+  - I was having touble with passing the 'currentScore' variable, from the 'cycleForward' function (cycled the questions forwards), to the 'cycleBackward' function; in order to keep track of the score moving both forwards, and backwards. I had to create a global object, var 'answersGiven', outside the cycleForward function, then assigned the current score to the global variable as a property. This could be accessed from the cycleBackward function by calling the object property. I got help from: [Stack overflow](https://stackoverflow.com/questions/407048/accessing-variables-from-other-functions-without-using-global-variables)
+  - Going back more than once, caused the cycleBackward function to give an inacurate record of score because it was subtracting the most recent ansawer each time. The solution to this was storing the score for each question in 'answersGiven'. 
+- Vague planning
+  - Some key areas were overlooked at the planning phase, which would have made it a lot easier when it came to writing the code:
+    - How the users answers would be stored and the scores added up was not thought through well.
+    - Key features, such as a close button on the popup window was not conscidered.
+    - Two of the questions are only accessible as a result of a certain answer from a previous question; the logistics of this wasn't thought out, so again, when it came to writing the code, made it a lot more difficult, and eventually the idea was scrapped due to time constraints.
+    - No conscideration of validation to prompt the user to select an option. Neither for a notification that the quiz is complete after the quiz is finished.  
 
 #### CSS
-
-
-
 - Pop-up quiz window CSS
   - I wanted to get the layout of the quiz pop-up window configured using only Bootstraps grid system. I spent a while trying to get the footer of the window to stay at the bottom without affecting other elements. I could not achieve this and in the end had to impliment some custom CSS, changing the display properties of the outer 'div' container and the margin-top of the footer.
 
 
-
-- Vague planning
-  - Some key areas were overlooked at the planning phase, which would have made it a lot easier when it came to writing the code. 
-    - How the users answers would be stored and the scores added up was not well thought through.
-    - Key features, such as a close button on the popup window was not conscidered.
-    - Two of the questions are only accessible as a result of a certain answer from a previous question; the logistics of this wasn't thought out, so again, when it came to writing the code, made it a lot more difficult.
-    - No conscideration of validation to prompt the user to select an option. Neither for a notification that the quiz is complete after the quiz is finished.
 
 
 
@@ -112,10 +117,8 @@ The colour pallet was found on https://mycolor.space/
 
 ### Future features to include/update
 
-- I would like to make the readme file more comprehensive.
+- 
 - Forms should be linked up and should include feedback for the user.
-
-
 
 ### Deployment
 - The site was deployed to GitHub pages:
@@ -128,11 +131,12 @@ Cloning the Repository:
   - Repository page > Code > local > HTTPS > copy link > clone in code editor.
 
 ### Credits
-The colour pallet was found on - https://mycolor.space/
-Globe image used as a background - https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
-The quiz pop up window was based loosly on Bootstraps modal example in the documentation - https://getbootstrap.com/docs/5.3/components/modal/
-I used this article to get the backbone of my pop-up window JS quiz - https://www.linkedin.com/advice/3/how-can-you-create-pop-up-window-html-javascript-skills-html
-'tutorials point' helped me with a boiler plate for my answers list in the pop-up quiz - https://www.tutorialspoint.com/how-to-dynamically-create-radio-buttons-using-an-array-in-javascript#:~:text=This%20process%20can%20be%20automated,createElement()%20and%20appendChild().
+The colour pallet was found on: https://mycolor.space/
+Globe image used as a background: https://pixabay.com/vectors/world-earth-globe-planet-global-908894/
+The quiz pop up window was based loosly on Bootstraps modal example in the documentation: https://getbootstrap.com/docs/5.3/components/modal/
+I used this article on Linkedin for help with generating the pop-up window of the JS quiz: https://www.linkedin.com/advice/3/how-can-you-create-pop-up-window-html-javascript-skills-html
+'tutorials point' helped with a boiler plate for appending the 'answers' list to the pop-up quiz: https://www.tutorialspoint.com/how-to-dynamically-create-radio-buttons-using-an-array-in-javascript#:~:text=This%20process%20can%20be%20automated,createElement()%20and%20appendChild().
+I used an article from 'javaTpoint' to help with the quiz validation, to make sure necessary all fields were filled out, if not, a warning was displayed: https://www.javatpoint.com/javascript-form-validation
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
 https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
 https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  

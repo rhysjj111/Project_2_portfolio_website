@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rhys Johnston: Portfolio</title>
+        <title>Automate Insight</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -23,36 +23,13 @@
         <!-- navbar-->
         <nav class="navbar navbar-dark navbar-expand-lg container-fluid bgc-1">
             <div class="container-fluid p-2">
-
                 <a class="navbar-brand ms-4 ms-lg-5" href="index.html"><p class="p-0 m-0 fc-1">Automate Insight</p></a>
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse ms-lg-5" id="navbarSupportedContent">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" href="index.html#shop">Shop</a>
-                        </li>
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" aria-current="page" href="about.html">About us</a>
-                        </li>
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" href="commission_gallery.html">Commission Paints Gallery</a>
-                        </li>
-                        <li class="nav-item me-lg-3 d-lg-none">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact</a>
-                        </li>
-                    </ul> -->
                     <div class="ms-lg-auto me-lg-5">
                         <ul class="navbar-nav">
                             <li class="d-block">
-                                <a class="btn btn-light quiz-button bgc-1a fc-7" id="quiz-initiate-button" >Take the Quiz! <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
-                                <a class="btn btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
-                            </li> 
-                            
+                                <a class="btn btn-light btn-small quiz-button bgc-1a fc-7" id="quiz-initiate-button" >Take the Quiz! <i class="fa-solid fa-comment d-none d-sm-inline" aria-hidden="true"></i></a>
+                                <a class="btn btn-light contact-button bgc-1a fc-1a d-none d-sm-inline" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
+                            </li>                             
                         </ul>
                     </div>
                 </div>                    
@@ -78,34 +55,38 @@
         <!--/cover-->
 
         <!-- cards -->
-        <div class="container-fluid cards-container content-container f-2">
-            <section class="container-fluid px-0">
-                <div class="row justify-content-evenly">
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <span class="data-icon"></span>
-                                <h2 class="card-heading">Collection & Analysis of Data</h2>
+        <section class="container-fluid cards-container content-container f-2">
+            <div class="row justify-content-evenly m-0">
+                <div class="col-lg-5 my-3">
+                     <div class="card fc-1a">
+                       <div class="card-body p-5 row">
+                            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3 class="card-heading">Collection & Analysis of Data</h3>
+                            <div class="card-body-description">
                                 <p>Most moving parts of a business can be recorded, and the data sorted through to provide insight.<br><em>ie. sales/costs/employee productivity/customer profiling</em>
                                 </p>    
                                 <p>
                                     Which areas that should be investigated will be unique for each business type and it's current situation; there's no magic one size fits all. Data collection should be tailored with clear, well thought out, specific goals.
                                 </p>
-                                <p>BENEFITS:
-                                    <ul class="benefits-list">
-                                        <li>Removes guess work and estimations,</li>
-                                        <li>Get the information you need, fast,</li>
-                                        <li>Greater confidence making decisions.</li>
-                                    </ul>
-                                </p>
+                            </div>
+                            <div class="card-benefits-container bgc-2 align-self-end">
+                                <h3>BENEFITS:</h3>
+                                <ul class="benefits-list">
+                                    <li>Removes guess work and estimations,</li>
+                                    <li>Get the information you need, fast,</li>
+                                    <li>Greater confidence making decisions.</li>
+                                    <li>Future-proof your company </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <span class="data-icon"></span>
-                                <h2 class="card-heading">Automation</h2>
+                </div>
+                <div class="col-lg-5 my-3">
+                    <div class="card fc-1a">
+                        <div class="card-body row p-5">
+                            <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+                            <h3 class="card-heading">Automation</h3>
+                            <div class="card-body-description">
                                 <p>There are many areas of business that can be automated to cut out human effort and human error. This means employee efforts can be redirected to much more meaningful endeavours.
                                 </p>
                                 <p>
@@ -114,7 +95,9 @@
                                 <p>                           
                                     Automation should also be targeted.
                                 </p>
-                                <p>BENEFITS:</p>
+                            </div>
+                            <div class="card-benefits-container bgc-2 align-self-end">
+                                <h3>BENEFITS:</h3>
                                 <ul class="benefits-list">
                                     <li>Minimise human error,</li>
                                     <li>Cut down on wasted hours performing repetitive tasks,</li>
@@ -124,52 +107,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="circle-container container-fluid d-none d-xl-block fc-1a bgc-1a">
-                <h4 class="text-center">BENEFITS:</h4>
-                <div class="circle" id="circle2">
+            </div>
+            <div class="circle-container d-none fc-1a bgc-1a">
+                <h2 class="text-center card-heading">BENEFITS:</h2>
+                <div class="circles" id="circle2">
                     <div>
                         <ul class="benefits-list">
+                            <h4>DATA ANALYSIS:</h4>
                             <li>Removes guess work and estimations,</li>
                             <li>Get the information you need, fast,</li>
                             <li>Greater confidence making decisions.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="circle" id="circle1">
+                <div class="circles" id="circle1">
                     <div>
                         <ul class="benefits-list">
+                            <h4>AUTOMATION:</h4>
                             <li>Minimise human error,</li>
                             <li>Cut down on wasted hours performing repetitive tasks,</li>
                             <li>Provides uniformity which gives a professional impression to clients.</li>
                         </ul>
                     </div>
                 </div>
-                <div id="middle">
+                <div id="middle-container">
                     <ul class="benefits-list">
+                        <h4>TOGETHER:</h4>
                         <li>Future-proof your company,</li>
                         <li>Efforts focused on the areas that create maximum impact.</li>
                     </ul>
                 </div>
             </div>
-            </section>
-        </div>
+        </section>
+        
         
         <!-- /cards -->
 
         <!-- pricing -->
-        <div class="container-fluid pricing-container content-container">
+        <div class="container-fluid pricing-container content-container bgc-1 fc-1 f-4">
             <section>
-                <h2>Pricing</h2>
-                <p>Each job is unique and priced accourding to your business needs. Get in touch for a free 
-                    evaluation to see what we can do for your business.</p> 
+                <div class = "pricing-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h2>pricing</h2>
+                <hr>
+                <p class="fc-1">
+                    Each job is unique and priced accourding to your business needs. Get in touch for a free 
+                    evaluation to see what we can do for your business.
+                </p> 
+                <a class="btn btn-light btn-lg contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a>
             </section>
         </div>
         <!-- /pricing -->
-
+ 
         <!-- case studies -->
-        <div class="container-fluid case-study-container content-container">
+        <div class="container-fluid case-study-container content-container d-none d-md-block">
             <section>
-                <div id="case-study-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="case-study-carousel" class="carousel slide" data-bs-ride="carousel">                   
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#case-study-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#case-study-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -177,17 +169,24 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/images/images.jpg" class="d-block" alt="">
+                            <img src="assets/images/casestudyjandj.png" class="d-block mx-auto" alt="A partial photo of a analysis spreadsheet">
                             <div class="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                                <h5><span class="highlight"> J&J Commercials - Data analysis </span></h5>
+                                <p><span class="highlight"> We collect data for J&J Commercials so they can see what's really going on. </span></p>
                                 </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/images.jpg" class="d-block" alt="">
+                            <img src="assets/images/redwood_casestudy.png" class="d-block mx-auto" alt="A partial photo of an email template">
                             <div class="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                                <h5><span class="highlight"> Redwood Carpentry - Automated Invoicing etc. </span></h5>
+                                <p><span class="highlight"> We streamlined Redwood's customer interaction process. </span></p>
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/calculator_casestudy.png" class="d-block mx-auto" alt="A partial photo of a calculator">
+                            <div class="carousel-caption">
+                                <h5><span class="highlight"> J&J Commercials - Quote calculator </span></h5>
+                                <p><span class="highlight"> We built a custom quote calculator to assist in a fluctuating market. </span></p>
                                 </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#case-study-carousel" data-bs-slide="prev">
@@ -205,15 +204,21 @@
         <!-- /case studies -->
 
         <!-- contact -->
-        <div class="container-fluid contact-container content-container">
-            <section class="container-fluid">
-                <div class="row justify-content-evenly">
-                    <div class="col-6">
+        <div class="container-fluid  content-container">
+            <section class="container-xl container-fluid contact-container bgc-1a">
+                <div class="row justify-content-center my-auto">
+                    <div class="personal-bio col">
                         <h3>Rhys Johnston</h3>
-                        <p>dflakjsdfalksj fajsdfas jf af adlfj aslfjalskjdf asf a f;sa jfklaj fklsa f sa;lkfjaskldfj sadkl f saf jaskl flas f asfl ajslf jasldf</p>
+                        <p>Hi, I'm Rhys Johnston! A bit about me:</p>
+                        <p>I studied Chemistry at the University of Sheffield and managed to get a bachelors.</p>
+                        <p>Shortly after, I went on a trip down under and spent the next two years moving about Australia, working various jobs. I even had a short spell in India, fantastic place!</p>
+                        <p>Since I've been home, I've spent the past 8 years in the family business, learning how small business works.</p>
+                        <p>I've now arrived at my passion, which is making things easier for people using technology.</p>
+                        <p>Please get in touch for a free consultation.</p>
+                        <p>It really is free, and no obligation, I just like seeing how different businesses do things! If we end up working together, that's a bonus!</p>
                     </div>
-                    <div class="col-6">
-                        <img src="assets/images/images.jpg" class="img-fluid" alt="">
+                    <div class="personal-photo col-6 d-none d-xl-block">
+                        <img src="assets/images/personalphoto.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -224,25 +229,15 @@
         <!-- Footer -->
         <div class="container-fluid footer-container">
             <footer class="footer pb-0 bgc-1">
-                <div class="row h-100 w-100 m-0">
-                    <div class="footer-image-container d-none d-sm-flex col-sm-3 justify-content-end align-items-center ms-5 ms-lg-0">
-                        <div class="text-center">
-                              
-                        </div>
+                <div class="row h-100 w-100 m-0 justify-content-center">
+                    <div class="contact-thumbnail-container col-12pt-4 text-center d-flex justify-content-center align-items-center">
+                        <div class="d-none d-md-block col-4 footer-thumbnail-icon px-2"><i class="fa-solid fa-phone" aria-hidden="true"></i><p>07493 xxx xxx</p></div>
+                        <div class="d-none d-md-block col-4 footer-thumbnail-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i><p>rhysxxxxx@gmail.com</p></div>
+                        <div class="d-block col-md-4"><a class="btn btn-lg btn-light contact-button bgc-1a fc-1a" data-bs-toggle="modal" data-bs-target="#contact-modal">Contact <i class="fa-solid fa-comment" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="footer-bio-container d-none d-md-flex col-md-3 justify-content-center align-items-center">
-                        
-                    </div>
-                    <div class="contact-thumbnail-container col-12 col-sm-7 col-md-5 col-lg-6 pt-4 p-sm-4 p-lg-0 text-center d-flex justify-content-center align-items-center ms-sm-auto me-lg-0">
-                        <div class="col-6 col-lg-3 footer-thumbnail-icon"><a target="blank" href="https://www.facebook.com/RedCrownFigures"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></div>
-                        <div class="d-none d-lg-block col-3 footer-thumbnail-icon px-2"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
-                        <div class="d-none d-lg-block col-4 footer-thumbnail-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
-                        <div class="d-block d-lg-none col-6"><a class="btn contact-button" data-bs-toggle="modal" data-bs-target="#contact-modal" > <i class="fa-solid fa-comment" aria-hidden="true"></i></a></div>
-                    </div>
-                
                     <!-- Copyright -->
                     <div class="text-center text-white copyright align-self-end">
-                    © 2020 Copyright: Chris Edwards
+                    © 2023 Copyright: Rhys Johnston
                     </div>
                     <!-- /Copyright -->
                 </div>
@@ -288,7 +283,8 @@
                 <div id="quiz-header-container" class="quiz-header-container modal-header">
                     <h2 class="modal-title quiz-title display-6" id="quiz-title-details">Your details</h2>
                     <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-questions">Questions</h2>
-                    <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-feedback">Feedback</h2>
+                    <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-feedback-automation">Feedback - Automation</h2>
+                    <h2 class="modal-title quiz-title display-6 d-none" id="quiz-title-feedback-data-analysis">Feedback - Data analysis</h2>
                     <button type="button" class="btn-close" id="btn-quiz-close" aria-label="Close"></button>
                 </div>
                 <div class="quiz-body-container modal-body row align-items-center justify-content-center">
@@ -341,13 +337,6 @@
             </div>
         </div>
         <!-- /popup html -->
-        
-        <h2 id="quiz-header-new" class="modal-title quiz-header display-6">Questions</h2>
-        <button id="previous-button" class="d-inline">Previous</button>
-        
-
-        <!-- question cycle buttons -->
-
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
