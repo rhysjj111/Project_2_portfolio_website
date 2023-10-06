@@ -157,7 +157,5 @@ I used this article on Linkedin for help with generating the pop-up window of th
 'tutorials point' helped with a boiler plate for appending the 'answers' list to the pop-up quiz: https://www.tutorialspoint.com/how-to-dynamically-create-radio-buttons-using-an-array-in-javascript#:~:text=This%20process%20can%20be%20automated,createElement()%20and%20appendChild().
 I used an article from 'javaTpoint' to help with the quiz validation, to make sure necessary all fields were filled out, if not, a warning was displayed: https://www.javatpoint.com/javascript-form-validation
 https://bbbootstrap.com/snippets/simple-contact-form-74408136 - used as a template for main contact form.  
-https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer.  
-https://www.w3schools.com/css/css3_shadows_box.asp - used code for box shadows on images.  
-Images taken from Redcrown facebook page. (Permission granted)  
+https://mdbootstrap.com/how-to/bootstrap/footer-add/ - used a template for structure of footer. 
 
