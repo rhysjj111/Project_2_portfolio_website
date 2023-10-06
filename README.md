@@ -131,6 +131,9 @@ Each colour was put into it's own css class name for font and background, so tha
   - Two warnings were returned when using [JSLint](https://www.jslint.com/) to validate JS. These can be ignored as it is necessary to include 'event' in this case, even if it is not called.
 ![JS validation](/assets/images/readme_images/validation/JS%20VALIDATOR.png)
 
+### Lighthouse
+![Lighthouse results](/assets/images/Lighthouse.png)
+
 ### Future features to include/update
 
 - I would like to store the quiz results, and contact form results in a database to be accessed later.
