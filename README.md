@@ -49,14 +49,15 @@ Javascript pop up quiz wireframe:
 ### Quiz
 ![JavaScript workflow](/assets/images/readme_images/JS_QUIZ_FLOW.png)
 
-- Plan
-  - The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
-  - The questions will be stored in an array; each question and answer pair in an object.
-  - The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
-  - A submit button will call feeback a option, based on the answers given.
-  - Data validation is required to ensure an answer is selected before cycling to next question.
+##### Plan
+- The quiz will have 7 potential questions. 2 of them accessible depending on the answers given to previous questions.
+- The questions will be stored in an array; each question and answer pair in an object.
+- The quiz will be initiated by a button and cycle through each question as the user chooses their answers and uses the next and previous buttons.
+- A submit button will call feeback a option, based on the answers given.
+- Data validation is required to ensure an answer is selected before cycling to next question.
 
-- End design similarity/difference
+##### End design similarity/difference
+-JS
   - The quiz has quite a few differences, mainly things that were overlooked in the design stage. A close button, to close the quiz was added in after design, as this was not initially conscidered.  
   - A start button was also added at the first 'details' section, as this made it easier to seperate the 'details' section from the 'questions' section when it came to cycling through the questions.
   - A progress bar was omitted due to time constraints. It was decided the progress bar was not essential to functionality and time was better spent elsewhere.
@@ -65,6 +66,9 @@ Javascript pop up quiz wireframe:
   - The flow diagram does not account for the 'feedback cycle' and 'feedback append' functions that replaced a proposed 'feedback' function.
   - Otherwise the quiz was very similar in reality to design from the wireframes and flow diagram.
 
+- HTML & CSS
+  -The design of the web page was largely similar to the proposed design. The main difference was the omission of the 'benefit rings' of the 'cards' section. This was because, it looked clunky and the content was better displayed at the bottom of each card.
+
 
 ### Colour scheme
 ![Colour scheme pallete](/assets/images/readme_images/colour_pallet.png)
@@ -72,6 +76,10 @@ The colour pallet was found on [mycolor.space](https://mycolor.space/)
 Each colour was put into it's own css class name for font and background, so that I could easily switch between colours and deduce which combination looked best for each situation.
 
 ## Testing 
+
+### Functionality testing
+![Functionality testing](/assets/images/readme_images/functionalitytesting1.png)
+![Functionality testing](/assets/images/readme_images/functionalitytesting2.png)
 
 ### Issues
 
@@ -111,24 +119,32 @@ Each colour was put into it's own css class name for font and background, so tha
 
 ### Validators
 
-- No errors show when each html page is put into W3C validator
-- 9 warnings showed up on the W3C CSS checker about vendor extensions:  
-![CSS validator warnings](/assets/images/Readme/CSS_validator.png)
+- HTML
+  - No warnings were found when checked html with [W3C](https://validator.w3.org/).
+![Html validation](/assets/images/readme_images/validation/htmlvalidator.png)
+
+- CSS
+  - No warnings were found when checked css with [W3C](https://jigsaw.w3.org/css-validator/)
+![CSS validation](/assets/images/readme_images/validation/cssvalidtor.png)
+
+- JS
+  - Two warnings were returned when using [JSLint](https://www.jslint.com/) to validate JS. These can be ignored as it is necessary to include 'event' in this case, even if it is not called.
+![JS validation](/assets/images/readme_images/validation/JS%20VALIDATOR.png)
 
 ### Future features to include/update
 
-- 
-- Forms should be linked up and should include feedback for the user.
+- I would like to store the quiz results, and contact form results in a database to be accessed later.
+- I would like to be able to alter the quiz so that certain questions can only be answered if they choose certain answer(s) previously.
+- Forms should be linked up to a database and should include feedback to let the user know they have submitted the form succesfully.
 
 ### Deployment
-- The site was deployed to GitHub pages:
-  - Repository page > Setting > Pages > Build and deployment > Main branch > Save.
-  - Refresh page > Visit site.
+- The live site was deployed using GitHub pages, following these instructions:
+  - Login/sign-up > Search for repository: Project_2_portfolio_website > Setting > Pages > Build and deployment > Main branch > Select root > Save > Refresh page > Visit site.
     
-Link to live site - https://rhysjj111.github.io/Project_1_Redcrown/
+Link to live site - https://rhysjj111.github.io/Project_2_portfolio_website/
 
 Cloning the Repository:
-  - Repository page > Code > local > HTTPS > copy link > clone in code editor.
+  - Login/sign-up > Search for repository: Project_2_portfolio_website > Select 'code' button > local > HTTPS > copy link > open code editor > select location for cloned directory > In command terminal: 'git clone' > Paste link and enter.
 
 ### Credits
 The colour pallet was found on: https://mycolor.space/
