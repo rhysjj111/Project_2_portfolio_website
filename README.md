@@ -3,7 +3,7 @@
 ## UX
 
 ### Overview
-Vale Business Solutions is a website for a business that deliver tech solutions. It will contain a main page and a quiz powered by Javascript.
+Automate Insight is a website for a business that deliver tech solutions. It will contain a main page and a quiz powered by Javascript.
 
 ### Site owners goal
 To provide relevant information so potential customers can get any information quickly. The site is aimed at small businesses that may not have any knowledge on what is available/what they are in need of so there should  be a flow of information that isn't going to confuse/overwhelm visitors. A quiz will be available for customers curious but not sure what their business needs which will hopefully lead to them getting in touch when they are better informed.
