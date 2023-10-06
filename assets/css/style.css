@@ -118,7 +118,7 @@ hr{
 
 /* cover section */
 .cover-container{
-    background-image: url('https://rhysjj111.github.io/Project_2_portfolio_website/assets/images/globe6.png');
+    background-image: url('../images/globe6.png');
     background-position: bottom -5rem right -5rem ;
     background-size: 30rem;
     background-repeat: no-repeat;
